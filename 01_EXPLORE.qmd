@@ -1,0 +1,205 @@
+---
+title: "import xml"
+format: html
+editor: visual
+---
+
+From:
+
+Text Analysis with R / Authors: Matthew L. Jockers , Rosamond Thalken
+
+https://link-springer-com.proxy.lib.duke.edu/book/10.1007/978-3-030-39643-5
+
+{xml2} documentation - https://xml2.r-lib.org/
+
+```{r}
+library(tidyverse)
+library(xml2)
+```
+
+from: Parsing TEI XML
+
+https://link-springer-com.proxy.lib.duke.edu/chapter/10.1007/978-3-030-39643-5_12
+
+data from: [raw](https://raw.githubusercontent.com/i-d-e/ride/master/issues/issue03/melville/melville-tei.xml) \| [github](https://github.com/i-d-e/ride/blob/master/issues/issue03/melville/melville-tei.xml)
+
+```{r}
+my_xml_doc <- read_xml("data/melville-tei.xml")
+my_xml_doc
+xml_doc <- read_xml("data/melville1.xml")
+```
+
+```{r}
+xml_name(my_xml_doc)
+xml_text(my_xml_doc)
+
+```
+
+```{r}
+chapters_ns <- xml_find_all(xml_doc,
+             xpath = "//tei:div1[@type='chapter']",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+chapters_ns
+
+
+```
+
+```{r}
+xml_find_all(xml_doc,
+             xpath = "//tei:div1",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+
+xml_find_all(xml_doc,
+             xpath = "//tei:div1[@type='chapter']",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0")
+)
+```
+
+```{r}
+xml_find_all(
+  xml_doc,
+  "//tei:div1[@type='chapter']/tei:head",
+  ns = c(tei = "http://www.tei-c.org/ns/1.0")
+)
+```
+
+```{r}
+chapters_ns[[1]]
+```
+
+```{r}
+# [@type='abstract']
+
+chapters_ns <- xml_find_all(my_xml_doc, 
+                            xpath = "//div",
+                            ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+chapters_ns
+
+xml_find_all(my_xml_doc, 
+                            xpath = "//div[@type='abstract']",
+                            ns = c(tei = "https://www.tei-c.org/ns/1.0"))
+
+xml_find_all(my_xml_doc, 
+             xpath = "//div[@type='abstract']",
+             ns = c(tei = "https://www.tei-c.org/ns/1.0"))
+
+xml_find_all(xml_doc,
+             xpath = "//tei:div1",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+
+xml_find_all(my_xml_doc, 
+             xpath = "//body",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+
+```
+
+```{r}
+#| eval: false
+xml_find_all()
+```
+
+## using xml2
+
+https://github.com/cran/xml2
+
+```{r}
+xml_name(my_xml_doc)
+xml_children(my_xml_doc)
+xml_text(my_xml_doc)
+```
+
+```{r}
+xml_children(xml_doc)
+# xml_children(xml_doc)[2] %>% xml_text()
+xml_children(my_xml_doc)
+# xml_children(my_xml_doc)[2] %>% xml_text()
+
+xml_child(xml_doc, 2) 
+xml_child(my_xml_doc, 2)
+```
+
+```{r}
+xml_find_all(my_xml_doc, 
+             xpath = "//div[@xml:id='div1']",
+             ns = c(tei = "https://www.tei-c.org/ns/1.0"))
+```
+
+```{r}
+xml_text(my_xml_doc)
+```
+
+## sample xml file
+
+google "sample xml file"
+
+```{r}
+my_sample_book <- read_xml("data/sample_book.xml")
+```
+
+```{r}
+my_sample_book
+```
+
+```{r}
+xml_name(my_sample_book)
+```
+
+```{r}
+xml_text(my_sample_book)
+```
+
+```{r}
+foo <- my_sample_book %>% xml_children() %>% .[[1]] 
+foo
+class(foo)
+class(my_sample_book)
+xml_text(my_sample_book)
+```
+
+```{r}
+xml_type(my_sample_book)
+```
+
+```{r}
+xml_find_all(my_sample_book, "//catalog/book/author")
+```
+
+```{r}
+x <- read_xml("<foo><bar><baz /></bar><baz /></foo>")
+xml_path(xml_find_all(x, ".//bar"))
+```
+
+```{r}
+my_sample_book %>% xml_find_all("//catalog/book") %>% 
+  xml_text() -> my_books_vec
+# my_xml_doc
+my_books_vec
+```
+
+```{r}
+my_xml_doc %>% 
+  xml_children()
+```
+
+```{r}
+my_xml_doc %>% 
+  xml_find_all("//text")
+```
+
+\<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ride.3.1"\>
+
+xml_find_all(my_xml_doc,
+
+xpath = "//tei::div1\[\@type='chapter'\]",
+
+ns = c(tei = "https://www.tei-c.org/ns/1.0"))
+
+```{r}
+chapters_ns <- xml_find_all(my_xml_doc, 
+                            xpath = "//tei::div1[@type='chapter']",
+                            ns = c(tei = "https://www.tei-c.org/ns/1.0"))
+```
+
+```{r}
+xml_find_all()
+```

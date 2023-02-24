@@ -1,0 +1,115 @@
+---
+title: "02_explore"
+format: html
+editor: source
+---
+
+```{r}
+library(tidyverse)
+library(xml2)
+```
+
+```{r}
+mxml_doc <- read_xml("data/melville1.xml")
+```
+
+```{r}
+mxml_doc
+```
+
+```{r}
+xml_name(mxml_doc)
+xml_text(mxml_doc)
+```
+
+```{r}
+chapters_ns <- xml_find_all(mxml_doc,
+             xpath = "//tei:div1[@type='chapter']",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+chapters_ns
+```
+
+```{r}
+class(chapters_ns[[1]])
+  
+```
+
+```{r}
+titles_ns <- xml_find_all(
+  mxml_doc,
+  xpath = "//tei:div1[@type='chapter']/tei:head",
+  ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+```
+
+```{r}
+titles_v <- xml_text(titles_ns) 
+head(titles_v)
+```
+
+------------------------------------------------------------------------
+
+```{r}
+xml_b_doc <- read_xml("data/B06313.headed.xml")
+```
+
+```{r}
+xml_b_doc
+```
+
+```{r}
+xml_find_all(xml_b_doc,
+             xpath = "//DIV1[@TYPE='letter']",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+```
+
+```{r}
+b_heads <- xml_find_all(xml_b_doc,
+             xpath = "//DIV1[@TYPE='letter']/HEAD",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+b_heads
+```
+
+```{r}
+xml_text(b_heads)
+```
+
+### list
+
+```{r}
+b_list <- xml_find_all(xml_b_doc,
+             xpath = "//DIV1[@TYPE='list']/HEAD",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+b_list
+
+xml_find_all(xml_b_doc,
+             xpath = "//DIV1[@TYPE='list']/LIST/ITEM",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+```
+
+## A68945
+
+```{r}
+a_doc <- read_xml("data/A68945.headed.xml")
+a_doc
+```
+
+```{r}
+xml_find_all(a_doc,
+             xpath = "//DIV1[@TYPE='text']",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0")) %>% 
+  xml_text()
+```
+
+```{r}
+xml_find_all(a_doc,
+             xpath = "//DIV1[@TYPE='text']/HEAD",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+
+xml_find_all(a_doc,
+             xpath = "//DIV1[@TYPE='text']/P",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+
+xml_find_all(a_doc,
+             xpath = "//DIV1[@TYPE='text']/LIST/ITEM",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+```

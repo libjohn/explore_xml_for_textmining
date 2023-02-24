@@ -1,0 +1,281 @@
+---
+title: "Untitled"
+format: html
+editor: source
+---
+
+It helps to format the XML while constructing the xpaths
+
+https://jsonformatter.org/xml-formatter
+
+Data are from: https://duke.app.box.com/folder/194675506600?s=ubk6tcxsxwqiao7wq8559ozhkip2ms6n
+
+## more info on xpath
+
+-   https://youtu.be/O4Y0D0jC6to
+-   https://youtu.be/U-MZJ6rbqi4
+-   https://www.youtube.com/watch?v=OTStvDR_jF4
+
+### xpath generator
+
+### xpath formater
+
+https://jsonformatter.org/xml-formatter
+
+## Summary
+
+Exploring the techniques of Jockers and Thalken's [*Text Analysis with R*](https://link.springer.com/book/10.1007/978-3-030-39643-5) @jockers2020.  It's clear that a major issue is composing the proper xpath.  There are many useful youtube tutorials on xpath, or xpath and tei.  Getting the xpath correct may be a key to good analysis.  I have taken a stab, with an eye towards functionality.  But I have stopped short of being concerned about the precision of the xpath.  Researchers should pay special attention to the xpath so they are clear about their corpus.
+
+Beyond Jockers and Thalken, I highly recomment Sigle and Robinson's [Text Mining with R](https://www.tidytextmining.com/) and the helpful {tidytext} package.  I think Silge and Robinson's data wrangling techniques, being tidyverse inspired, are more accessible to most people.  Employing Jockers and Thalken algoritms may still be necessary on a strategic basis, but at least the researcher will not have to be delayed but base-R techniques.  Of course this recommendation is only relevant if a person prefers the grammatical assumptions of tidyverse.  Base-R people are free to continue their approach without any asperstions from me.
+
+Lastly, while I have not read it.  Hvitfeldt and Silge's [Supervised Machine Learning for Text Analysis in R](https://smltar.com/) is a text I would read if I were interested in deepening my understanding of text analysis.
+
+## library packages
+
+```{r}
+library(tidyverse)
+library(xml2)
+```
+
+## Import document
+
+```{r}
+# has_p_doc <- read_xml("data/A42503.headed.xml")
+has_p_doc <- read_xml("data/A68945.headed.xml")
+# has_p_doc <- read_xml("data/B06313.headed.xml")
+```
+
+## view/verify
+
+```{r}
+has_p_doc
+```
+
+```{r}
+xml_name(has_p_doc)
+```
+
+```{r}
+#| eval: false
+xml_text(has_p_doc)
+```
+
+## xpath tests
+
+```{r}
+xml_find_all(has_p_doc,
+             xpath = "//DIV1[@TYPE='section']",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+xml_find_all(has_p_doc,
+             xpath = "//DIV1[@TYPE='section']/HEAD",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+
+```
+
+```{r}
+xml_find_all(has_p_doc,
+             xpath = "//DIV1[@TYPE='section']/PB",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+```
+
+```{r}
+xml_find_all(has_p_doc,
+             xpath = "//DIV1[@TYPE='section']/P/PB",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+```
+
+## grabbing all the paragraphs
+
+```{r}
+my_lookie_df <- xml_find_all(has_p_doc,
+             xpath = "//DIV1[@TYPE='section']/P",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+```
+
+```{r}
+my_lookie_df |> 
+  xml_text() 
+```
+
+### Numbering the paragaphs
+
+```{r}
+my_lookie_df <- tibble(paragraph = my_lookie_df |> xml_text())
+
+my_lookie_df <- my_lookie_df |> 
+  mutate(p_number = row_number(), .before = paragraph) 
+my_lookie_df
+```
+
+### Regex
+
+find the paragraph with the phrase "against the Sublapsarian"
+
+```{r}
+my_lookie_df |> 
+  filter(str_detect(paragraph, regex("against the Sublapsarian", ignore_case = TRUE)))
+```
+
+Find the paragraph with the word "england"
+
+```{r}
+my_lookie_df |> 
+  filter(str_detect(paragraph, regex("england", ignore_case = TRUE)))
+```
+
+------------------------------------------------------------------------
+
+## More xpath tests
+
+```{r}
+xml_find_all(has_p_doc,
+             xpath = "//DIV1[@TYPE='section']/EPIGRAPH",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+```
+
+```{r}
+xml_find_all(has_p_doc,
+             xpath = "//DIV2[@TYPE='part']/EPIGRAPH/BIBL",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+  xml_text()
+```
+
+## DATE
+
+```{r}
+xml_find_all(has_p_doc,
+             xpath = "//SOURCEDESC",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+  xml_text()
+```
+
+```{r}
+xml_find_all(has_p_doc,
+             xpath = "//AUTHOR",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+  xml_text()
+```
+
+```{r}
+xml_find_all(has_p_doc,
+             xpath = "//PUBLICATIONSTMT/DATE",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+  xml_text()
+```
+
+```{r}
+xml_find_all(has_p_doc,
+             xpath = "//DATE",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+  xml_text() -> foo
+
+foo[5]
+
+print("-----------------XMXXMXMXMXM----------------")
+
+foo
+```
+
+```{r}
+xml_find_first(has_p_doc,
+               xpath = "//DATE",
+               ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+  xml_text()
+```
+
+```{r}
+library(fs)
+```
+
+```{r}
+my_file_list <- dir_ls("data", glob = "*.xml")
+my_file_list
+```
+
+```{r}
+orchestrate_df <- tibble(files = my_file_list)
+orchestrate_df <- orchestrate_df |> 
+  slice_head(n = 3)
+orchestrate_df
+```
+
+## Iterate
+
+```{r}
+get_source_desc <- function(my_file) {
+  read_xml(my_file) |> 
+    xml_find_all(xpath = "//SOURCEDESC",
+               ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+    xml_text()
+}
+
+
+orchestrate_df |> 
+  mutate(files = as.character(files)) |> 
+  mutate(source_description = map(files, ~ get_source_desc(.x))) |> 
+  unnest(source_description)
+```
+
+```{r}
+orchestrate_df |> 
+  mutate(files = as.character(files)) |> 
+  mutate(source_description = map(files, ~ get_source_desc(.x))) |> 
+  unnest(source_description) |> 
+  filter(str_detect(source_description, regex("take", ignore_case = TRUE)))
+
+```
+
+### example again
+
+//BODY/DIV1/P
+
+```{r}
+# my_xpath <- "//SOURCEDESC"
+# my_xpath <- "//DIV1/P"
+my_xpath <- "//BODY/DIV1/P"
+# my_xpath <- "/tei:TEI/tei:text/tei:body/tei:div/tei:p"
+# my_xpath <- "tei:text/tei:body//tei:div[@type='chapter']"
+
+get_some_generic <- function(my_file, my_xpath, ...) {
+  read_xml(my_file) |> 
+    xml_find_all(xpath = my_xpath,
+               ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+    xml_text()
+}
+
+orchestrate_df |> 
+  mutate(files = as.character(files)) |> 
+  mutate(mytxt = map(files, get_some_generic, my_xpath)) |> 
+  unnest(mytxt) |> 
+  group_by(files) |> 
+  mutate(pid = row_number(), .after = files) |> 
+  ungroup() |> 
+  nest(-files)
+```
+
+Example text from each of the three files
+
+```{r}
+orchestrate_df |> 
+  mutate(files = as.character(files)) |> 
+  mutate(mytxt = map(files, get_some_generic, my_xpath)) |> 
+  slice(1) |> 
+  unnest(mytxt) |> 
+  select(mytxt)
+
+orchestrate_df |> 
+  mutate(files = as.character(files)) |> 
+  mutate(mytxt = map(files, get_some_generic, my_xpath)) |> 
+  slice(2) |> 
+  unnest(mytxt) |> 
+  select(mytxt)
+
+orchestrate_df |> 
+  mutate(files = as.character(files)) |> 
+  mutate(mytxt = map(files, get_some_generic, my_xpath)) |> 
+  slice(3) |> 
+  unnest(mytxt) |> 
+  select(mytxt)
+
+```
+

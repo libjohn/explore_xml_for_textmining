@@ -1,0 +1,62 @@
+---
+title: "eebo html"
+format: html
+editor: visual
+---
+
+https://quod.lib.umich.edu/e/eebo/B06712.0001.001?rgn=main;view=fulltext
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+```{r}
+my_panegyrick <- read_html("https://quod.lib.umich.edu/e/eebo/B06712.0001.001?rgn=main;view=fulltext")
+```
+
+```{r}
+my_panegyrick
+```
+
+```{r}
+my_panegyrick %>% 
+  html_text()
+```
+
+```{r}
+my_panegyrick %>% 
+  html_nodes("div .lg") %>% 
+  html_text()
+```
+
+```{r}
+my_panegyrick %>% 
+  html_nodes("div .lg")  %>% 
+  html_attrs() %>% head()
+  # html_text() %>% 
+  # tibble() %>% 
+  # unlist()
+```
+
+```{r}
+my_text <- my_panegyrick %>% 
+  html_nodes("div .line") %>% 
+  html_text()
+my_text
+```
+
+```{r}
+my_text[2]
+```
+
+```{r}
+my_text_df <- tibble(my_text)
+my_text_df
+```
+
+```{r}
+my_text_df %>% 
+  mutate(line_number = row_number(), .before = my_text) %>% 
+  filter(str_detect(my_text, "Disown"))
+```

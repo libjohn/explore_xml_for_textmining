@@ -1,0 +1,103 @@
+---
+title: "04_iterate_in_bulk"
+format: html
+editor: source
+bibliography: references.bib
+---
+
+In this example I show how to use tidyverse techniquest to import multiple xml files and intereate over each file one by one.  
+
+Based on Jockers and Thalken's [*Text Analysis with R*](https://link.springer.com/book/10.1007/978-3-030-39643-5) @jockers2020
+
+```{r}
+library(tidyverse)
+library(xml2)
+library(fs)
+```
+
+```{r}
+my_files <- dir_ls("XMLAuthorCorpus", glob = "*.xml")
+my_files
+```
+
+```{r}
+
+orchestrate_df <- enframe(my_files)
+orchestrate_df 
+```
+
+```{r}
+# //tei:p
+# tei:text/tei:body//tei:div[@type='chapter']
+get_source_desc <- function(my_file) {
+  read_xml(my_file) |> 
+    xml_find_all(xpath = "tei:text/tei:body//tei:div[@type='chapter']",
+               ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+    xml_text()
+}
+
+orchestrate_df |> 
+  select(-value) |> 
+  slice(c(2,5,8,17,18,20,25,26)) |> 
+  mutate(mytxt = map(name, get_source_desc)) #|> 
+  # slice(4) |> 
+  # unnest(mytxt)
+  
+```
+
+```{r}
+my_xpath <- "/tei:TEI/tei:text/tei:body/tei:div/tei:p"
+# my_xpath <- "tei:text/tei:body//tei:div[@type='chapter']"
+
+get_carlton <- function(my_file, my_xpath, ...) {
+  read_xml(my_file) |> 
+    xml_find_all(xpath = my_xpath,
+               ns = c(tei = "http://www.tei-c.org/ns/1.0")) |> 
+    xml_text()
+}
+
+orchestrate_df |> 
+  select(-value) |> 
+  slice(c(2,5,8,17,18,20,25,26)) |> 
+  mutate(mytxt = map(name, get_carlton, my_xpath)) |> 
+  unnest(mytxt) |> 
+  group_by(name) |> 
+  mutate(pid = row_number(), .after = name) |> 
+  ungroup() |> 
+  nest(-name) #|> 
+  # slice(3) |> 
+  # unnest(data) 
+  
+```
+
+Below is an example, just like above, but limited to the text from the 3rd document.
+
+```{r}
+orchestrate_df |> 
+  select(-value) |> 
+  slice(c(2,5,8,17,18,20,25,26)) |> 
+  mutate(mytxt = map(name, get_carlton, my_xpath)) |> 
+  unnest(mytxt) |> 
+  group_by(name) |> 
+  mutate(pid = row_number(), .after = name) |> 
+  ungroup() |> 
+  nest(-name) |> 
+  slice(3) |>
+  unnest(data)
+```
+
+```{r}
+workitout <- read_xml("XMLAuthorCorpus/Kyne1.xml")
+workitout
+```
+
+```{r}
+# tei:TEI/tei:text/tei:body//tei:p
+# tei:text/tei:body//tei:p
+# //tei:p
+
+xml_find_all(workitout,
+             xpath = "tei:text/tei:body//tei:div[@type='chapter']",
+             ns = c(tei = "http://www.tei-c.org/ns/1.0"))
+
+```

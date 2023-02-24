@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="http://www.textcreationpartnership.org/docs/code/pfs.css"?>
+<!DOCTYPE ETS SYSTEM "http://www.textcreationpartnership.org/docs/code/eebo2prf.xml.dtd">
+<ETS>
+
+<HEADER><FILEDESC><TITLESTMT><TITLE TYPE="245" I2="0">Two great victories. I. One obtained by Collonel Fleetvvood at Shaftsbury on Sunday, August the 3. 1545 [sic]. 51 of the Kings Commissioners taken prisoners as they sate in Councell, with a perfect list of all their names. II. Another victory obtained by Lieutenant Generall Crumwell, against the Club-men at Hambleton-Hill. 2500 routed. 300 taken prisoners. 2000 armes taken. 12 slaine upon the place. Many wounded. Also all their colours, and drums taken, and all the rest of their baggage. Commanded to be printed, and is published according to order.</TITLE></TITLESTMT><EXTENT>Approx. 10 KB of XML-encoded text transcribed from 5 1-bit group-IV TIFF page images.</EXTENT><PUBLICATIONSTMT><PUBPLACE>Ann Arbor, MI ; Oxford (UK) :</PUBPLACE><PUBLISHER>Text Creation Partnership,</PUBLISHER><DATE>2009-03 (EEBO-TCP Phase 1).</DATE><IDNO TYPE="DLPS">B06313</IDNO>
+
+
+<IDNO TYPE="stc">Wing T3452</IDNO>
+
+<IDNO TYPE="stc">Thomason E.296[6]</IDNO>
+
+<IDNO TYPE="stc">ESTC R200202</IDNO>
+
+<IDNO TYPE="eebo citation">99861007</IDNO>
+
+<IDNO TYPE="proquest">99861007</IDNO>
+
+<IDNO TYPE="vid">113135</IDNO>
+<AVAILABILITY><P>This keyboarded and encoded edition of the work described above is co-owned by the institutions providing financial support to the Early English Books Online Text Creation Partnership. Searching, reading, printing, or downloading EEBO-TCP texts is reserved for the authorized users of these project partner institutions. Permission must be granted for subsequent distribution, in print or electronically, of this text, in whole or in part.  Please contact project staff at eebotcp-info@umich.edu for further information or permissions.</P></AVAILABILITY></PUBLICATIONSTMT><SERIESSTMT><TITLE>Early English books online.</TITLE></SERIESSTMT><NOTESSTMT><NOTE>(EEBO-TCP ; phase 1, no. B06313)</NOTE><NOTE>Transcribed from: (Early English Books Online ; image set 113135)</NOTE><NOTE>Images scanned from microfilm: (Thomason Tracts ; 49:E296[6])</NOTE></NOTESSTMT><SOURCEDESC><BIBLFULL><TITLESTMT><TITLE TYPE="245" I2="0">Two great victories. I. One obtained by Collonel Fleetvvood at Shaftsbury on Sunday, August the 3. 1545 [sic]. 51 of the Kings Commissioners taken prisoners as they sate in Councell, with a perfect list of all their names. II. Another victory obtained by Lieutenant Generall Crumwell, against the Club-men at Hambleton-Hill. 2500 routed. 300 taken prisoners. 2000 armes taken. 12 slaine upon the place. Many wounded. Also all their colours, and drums taken, and all the rest of their baggage. Commanded to be printed, and is published according to order.</TITLE></TITLESTMT><EXTENT>[2], 8 [i.e. 6] p.   </EXTENT><PUBLICATIONSTMT>
+<PUBPLACE>London, :</PUBPLACE>
+<PUBLISHER>Printed by T. Forcet.,</PUBLISHER>
+<DATE>1645.</DATE>
+</PUBLICATIONSTMT><NOTESSTMT><NOTE>P.6 misnumbered 8.</NOTE><NOTE>Annotation on Thomason copy: "Aug: 9th".</NOTE><NOTE>Reproduction of the original in the British Library.</NOTE></NOTESSTMT></BIBLFULL></SOURCEDESC></FILEDESC><ENCODINGDESC><PROJECTDESC><P>Header created with script mrcb2eeboutf.xsl on 2014-03-06.</P></PROJECTDESC><EDITORIALDECL N="4"><P>Manually keyed and coded text linked to page images in accordance with level 4 of the TEI in Libraries guidelines.</P><P>Issued variously as SGML (TCP schema; ASCII text with mnemonic sdata character entities); displayable XML (TCP schema; characters represented either as UTF-8 Unicode or text strings within braces); or lossless XML (TEI P5, characters represented either as UTF-8 Unicode or TEI g elements).</P><P>Keying and markup guidelines available at TCP web site (http://www.textcreationpartnership.org/docs/)</P></EDITORIALDECL></ENCODINGDESC><PROFILEDESC><LANGUSAGE ID="eng"><LANGUAGE>eng</LANGUAGE></LANGUSAGE><TEXTCLASS><KEYWORDS><TERM>Fleetwood, Charles, d. 1692.</TERM><TERM>Cromwell, Oliver, 1599-1658.</TERM><TERM>Shaftesbury (England) --  History.</TERM><TERM>Hambleton Hills (England) --  History.</TERM><TERM>Great Britain --  History --  Civil War, 1642-1649 --  Early works to 1800.</TERM></KEYWORDS></TEXTCLASS></PROFILEDESC><REVISIONDESC><CHANGE><DATE>2000-00</DATE><RESPSTMT><RESP>TCP</RESP></RESPSTMT><ITEM>Assigned for keying and markup</ITEM></CHANGE><CHANGE><DATE>2001-08</DATE><RESPSTMT><RESP>Apex CoVantage</RESP></RESPSTMT><ITEM>Keyed and coded from ProQuest page images</ITEM></CHANGE><CHANGE><DATE>2001-09</DATE><RESPSTMT><RESP>TCP Staff (Michigan)</RESP></RESPSTMT><ITEM>Sampled and proofread</ITEM></CHANGE><CHANGE><DATE>2001-09</DATE><RESPSTMT><RESP>TCP Staff (Michigan)</RESP></RESPSTMT><ITEM>Text and markup reviewed and edited</ITEM></CHANGE><CHANGE><DATE>2001-11</DATE><RESPSTMT><RESP>pfs</RESP></RESPSTMT><ITEM>Batch review (QC) and XML conversion</ITEM></CHANGE></REVISIONDESC></HEADER>
+<EEBO>
+<IDG S="marc" R="UM" ID="B06313">
+<STC T="W">T3452</STC>
+<STC T="T">E.296[6]</STC>
+<STC T="C">R200202</STC>
+<BIBNO T="umi">99861007</BIBNO>
+<VID>113135</VID></IDG>
+
+<!-- formerly confused with this:
+
+{IDG S="fulc" R="UM" ID="A40724"}
+{STC T="W"}F252{/STC}
+{BIBNO T="umi"}99861007{/BIBNO}
+{VID}113135{/VID}
+{/IDG} -->
+
+
+<TEXT LANG="eng">
+<FRONT>
+<DIV1 TYPE="title page">
+<PB REF="1" MS="y"/>
+<P>Two Great Victories.</P>
+<P>I.</P>
+<P>One obtained by Collonel FLEETVVOOD at <HI>Shaftsbury</HI> on <HI>Sunday, August</HI> the 3. 1545.</P>
+<P>51 Of the Kings Commissioners taken Prisoners as they sate in Councell, with a perfect List of all their Names.</P>
+<P>II.</P>
+<P>Another Victory obtained by Lieutenant Generall CRVMWELL, against the Club∣men at <HI>Hambleton-</HI>Hill.</P>
+<P>2500 Routed. 300 Taken Prisoners.</P>
+<P>2000 Armes taken. 12 Slaine upon the place.</P>
+<P>Many wounded.</P>
+<P>Also all their Colours, and Drums taken, and all the rest of their Baggage.</P>
+<P>Commanded to be Printed, and is published according to Order.</P>
+<P><HI>LONDON,</HI> Printed by T. FORCET. 1645.</P>
+</DIV1>
+</FRONT>
+<BODY>
+<DIV1 TYPE="letter">
+<PB REF="2"/>
+<PB N="1" REF="2"/>
+<HEAD>The whole relation of the taking of all the Kings Commissioners, as they sate in Counsell at <HI>Shaftsbury,</HI> and were brought Prisoners to <HI>Sherburne,</HI> by Collonel FLEETVVOOD, <HI>on the Lords day, August,</HI> 3. 1645.</HEAD>
+<OPENER><SALUTE>SIR;</SALUTE></OPENER>
+<P>COncerning the surprising of the Kings Commissioners at <HI>Shaftsbury,</HI> it was brief∣ly thus:</P>
+<P>The Generall being marched from the Leaguer <HI>Westward,</HI> upon some in∣tended designes that way; left <HI>Sherburne</HI> still suffici∣ently besiedged. And the Enemy seeing their friends straitned in the Castle? Used meanes for some addresses to bee made to the King, for some course to be taken for their reliefe, and procured a Letter from the King to that purpose, which was sent to his Agents of the Club-men to ga∣ther strength, for the raising of the siedge, upon Sir <HI>Thomas Fairefaxes</HI> advance.</P>
+<P>The leaders of the Clubmen, receiving these Let∣ters from the King, met at <HI>Shaftsbury</HI> on <HI>Saturday</HI> the 2 of <HI>August,</HI> 1645, to consult what course to take,
+<PB N="4" REF="3"/>
+for the effecting thereof; and having their instructi∣ons ready, some observations were made, that they were not full enough for the carrying of of this de∣signe, and that therefore three more might be deba∣ted on to be added.</P>
+<P>But the meane while Sir <HI>Thomas Fairefax</HI> hearing of the proceedings of the Club-men; doubted that if they should goe on, it might impede the proceedings of those he had left before <HI>Sherburne,</HI> for the taking thereof; where were in the Leaguer, Colonell <HI>Picke∣ring</HI> with a Brigade of 2000 foot, and Colonell <HI>Wal∣leyes</HI> Regiment of Horse; to whom the Generall re∣turned the same day (being <HI>Saturday</HI>) to <HI>Sherburne,</HI> where he himselfe come, and tooke up his head quar∣ters; and from whence hee immediatly sent Colo∣nel <HI>Fleetwood</HI> with his owne, and Colonels <HI>Walleyes</HI> Regiments of Horse, to goe to <HI>Shaftsbury</HI> to oppose the Kings Commissioners Iesuiticall designe.</P>
+<P>With those two Regiments Collonel <HI>Fleetwood</HI> marched to <HI>Shaftsbury,</HI> and so devided his Forces, that when he came before the Towne, he set one part to surround the Towne, whilest the rest marched into <HI>Sherburne,</HI> where the Commis∣sioners were then sitting and surprised them all, not one of them escaping him; And they were all brought in Prisoners this day to the Generall to <HI>Sherburne,</HI> where they were all examined one by one; I have sent you the List of all their names many of them are malignant Priests, and all of them notable sticklers for the enemy in these parts.</P>
+<P>The Generall con<GAP DESC="illegible" REASON="faint" EXTENT="1 letter" DISP="•"/>uted them all one by one: the Clergy by Scripture and their Adv<GAP DESC="illegible" REASON="missing" EXTENT="1 letter" DISP="•"/>cate <HI>Yorg</HI> by Law; shewing them plainly how themselves acted contrary to their owne Princi∣ples and pretences,</P>
+<CLOSER><DATELINE>Dated at the Leaguer before She<GAP DESC="illegible" REASON="missing" EXTENT="1 letter" DISP="•"/>burne, August 3, 1645.</DATELINE></CLOSER>
+</DIV1>
+<DIV1 TYPE="list">
+<PB N="3" REF="3"/>
+<HEAD>A List of the Countrey Gentlemen called the Leaders of the Club men for <HI>Wilts, Dorset,</HI> and <HI>Somerset,</HI> brought Prisoners to <HI>Sherbourne</HI> on the Lords day <HI>Aug.</HI> 3. 1645. taken at <HI>Shaftsbury.</HI></HEAD>
+<LIST>
+<ITEM>MAster John Saintlo.</ITEM>
+<ITEM>Mr. Richard Buckridge.</ITEM>
+<ITEM>Mr. William Smith.</ITEM>
+<ITEM>Mr. Thomas Iervis.</ITEM>
+<ITEM>Mr. Iohn Lovell.</ITEM>
+<ITEM>Mr. Iohn Estmond.</ITEM>
+<ITEM>Mr. Francis Craddocke.</ITEM>
+<ITEM>Mr. Ed. Davis.</ITEM>
+<ITEM>Mr. Henry Hayward.</ITEM>
+<ITEM>Mr. Laurence Hide.</ITEM>
+<ITEM>Mr. Thomas Bonnet.</ITEM>
+<ITEM>Mr. John Pope.</ITEM>
+<ITEM>Mr. Thomas Rose.</ITEM>
+<ITEM>Mr. Henry Gouge.</ITEM>
+<ITEM>Mr. Iohn Enery.</ITEM>
+<ITEM>Mr. Iohn Bennet.</ITEM>
+<ITEM>Mr. Iohn Cary.</ITEM>
+<ITEM>Mr. Edward Boone.</ITEM>
+<ITEM>Mr. Nicholas Bingham.</ITEM>
+<ITEM>Mr. Thomas Roet.</ITEM>
+<ITEM>Mr. Robert Squire.</ITEM>
+<ITEM>Mr. Richard Alborne.</ITEM>
+<ITEM>Mr. Charles Simmes.</ITEM>
+<ITEM>Mr. Frances Abbot.</ITEM>
+<ITEM>Mr. Robert Sapit.</ITEM>
+<ITEM>Mr. Thomas Marvell.</ITEM>
+<ITEM>Mr. Robert Hollis.</ITEM>
+<ITEM>Mr. Samuel Forward.</ITEM>
+<ITEM>Mr. William Fireall.</ITEM>
+<ITEM>Mr. Charles Studley.</ITEM>
+<ITEM>Mr. Thomas Brook.</ITEM>
+<ITEM>Mr. Iohn King.</ITEM>
+<ITEM>Mr. Edmond Clarke.</ITEM>
+<ITEM>Mr. Martin Marble.</ITEM>
+<ITEM>Mr. Thomas Bunce.</ITEM>
+<ITEM>Mr. William Sanders.</ITEM>
+<ITEM>Mr. VVilliam Blunt.</ITEM>
+<ITEM>Mr. Iohn May.</ITEM>
+<ITEM>Mr. Iohn Corbet.</ITEM>
+<ITEM>Mr. Richard Craddocke.</ITEM>
+<ITEM>Mr. Iohn Pill.</ITEM>
+<ITEM>Mr. Robert Ieffery.</ITEM>
+<ITEM>Mr. William Ford.</ITEM>
+<ITEM>Mr. Mathew Martin.</ITEM>
+<ITEM>Mr. VVilliam Laning.</ITEM>
+<ITEM>Mr. Henry Goodwyn.</ITEM>
+<ITEM>Mr. Rocke.</ITEM>
+<ITEM>Mr. VVinne.</ITEM>
+<ITEM>Mr. Hollis.</ITEM>
+<ITEM>Mr. Young.</ITEM>
+<ITEM>Mr. Joll<GAP DESC="illegible" REASON="missing" EXTENT="1 letter" DISP="•"/>ffe.</ITEM>
+</LIST>
+<P>Many of these are malignant Ministers.</P>
+</DIV1>
+<DIV1 TYPE="letter">
+<PB N="4" REF="4"/>
+<HEAD>A Relation of the routing and dispersing of 2500 Club-men, by Leiutenant Generall Crom∣well, that were gathered in a Body in Batalia upon Hambleton-Hill neere Blanford.</HEAD>
+<OPENER><SALUTE>SIR,</SALUTE></OPENER>
+<P>FOR my last, it was but in part of what (God be thanked) is since perfected; For since the bring∣ing in of the Commissioners I then gave you an ac∣count of, which were the Malignant heads of the Club-men; we have now broken and routed the bo∣dy also, the manner thus;</P>
+<P>The Club-men sent (on the Lords day at night) to have their Leaders delivered to them, and caused their Bells to be rung in all places, and Alarms to be given in their usuall way of rising, and this morning about 2500. instantly met at <HI>Hambleton-Hill</HI> with their Colours which were all White, (for they had got white silken Colours) and their Drums, and seve∣rall Weapons, Muskets, Pikes, Pisto's, Birding∣peeces, Bills, Halberts, and many severall Weapons and had drawn themselves into a body.</P>
+<P>Leiutenant Generall <HI>Cromwell</HI> with 500. Dra∣goones, and 500. more in a reserve to march after them, marched out from the Leaguer towards the Club-men, and facing them, they drew into Batalia and stood in a great and ancient Roman worke which is upon those hills, and admitted a Parley.</P>
+<P>Lieutenant Generall <HI>Crumwell</HI> demanded of them the reason of their rising, they answered to redeeme
+<PB N="5" REF="4"/>
+their heads, requiring the Commissioners to be deli∣vered to them, and then they said, they would return, home, but without their Leaders they would not dis∣band.</P>
+<P>Lieut: Gen: <HI>Cromwell</HI> returned answer, that they had them Prisoners: and that they were to answer for what they had done; and that they were at <HI>Sherburne</HI> with the Generall, and made a very full and worthy speech to them, to perswade them to be wise and re∣turne home in peace; shewing them how they have been misled by a company of Malignants: and decla∣ring what care the Generall had taken to secure their estates, and settle peace amongst them and what com∣fort they found, that submitted thereunto.</P>
+<P>But the Club-men were very unruly; vapouring, and protesting, pounctually to rescue, and redeeme their Leaders, (&amp; indeed, they are the very notorious ringleaders of the Malignants of these parts) but the moderate party (especially about <HI>Sommersetshire</HI>) doe much deride their folly.</P>
+<P>Lievttenant Generall <HI>Cromwell</HI> took great paines to appease them without shedding of blood, but no∣thing would satisfie them, but to have (their Lea∣ders) their Heads, delivered to them.</P>
+<P>Whereupon, the Club-men being in <HI>Battalia,</HI> Leivtenant General <HI>Cromwel</HI> drew up his Forces and charged them with the 500. Dragoons, and slew some 12 of them, wounded ma∣ny, tooke some 2 or 300 Prisoners, of the most notorious of them, and routed and dispersed the rest, who fled all home, leauing their Colours, and their Armes behinde them. And we hope that now they will no more trouble us so againe.</P>
+<CLOSER><DATELINE>Sherburne, August 4<SUP>th</SUP>, 1645.</DATELINE></CLOSER>
+</DIV1>
+<DIV1 TYPE="list">
+<PB N="8" REF="5"/>
+<HEAD>A List of what was taken from the Club-men in the fight betweene them and Lieutenant Generall <HI>Crom∣well</HI> at <HI>Hambleton-hill</HI> on Mun∣day the 4th of <HI>August 1645.</HI></HEAD>
+<LIST>
+<ITEM>Two thousand five hundred routed.</ITEM>
+<ITEM>Three hundred taken Prisoners.</ITEM>
+<ITEM>Twelve slaine upon the place.</ITEM>
+<ITEM>Many wounded.</ITEM>
+<ITEM>Two thousand Armes of all sorts viz. Mus∣quets, Pikes, Pistolls, Halberts, Birding peeces. &amp;c.</ITEM>
+<ITEM>All their Cullers, and Drummes, and other Baggage.</ITEM>
+<ITEM>On our side we lost onely three men and some wounded.</ITEM>
+</LIST>
+<TRAILER>FINIS.</TRAILER>
+</DIV1>
+</BODY>
+</TEXT>
+</EEBO>
+</ETS>
+
